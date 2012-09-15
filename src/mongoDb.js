@@ -1,7 +1,7 @@
 exports.establishConnection = establishConnection;
-exports.readList = readRecordsList;
-exports.read = readRecord;
-exports.insert = insertRecord;
+exports.readList = readList;
+exports.readRecord = readRecord;
+exports.insertRecord = insertRecord;
 
 var mongoDb = require('mongodb');
 
@@ -31,7 +31,7 @@ function establishConnection(settings, onSuccess, onFailure) {
  * @param onSuccess
  * @param [onFailure]
  */
-function readRecordsList(queryObject, onSuccess, onFailure) {
+function readList(queryObject, onSuccess, onFailure) {
 	queryObject.db.collection(queryObject.collectionName, function (err, resultCollection) {
 		if (err) {
 			fn.callIfPresent(onFailure, [err]);

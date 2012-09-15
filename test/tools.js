@@ -188,7 +188,7 @@ exports.testMongoDb = function (test) {
 		});
 
 		testPlan.addTask(function (task) {
-			mongoDb.read({
+			mongoDb.readRecord({
 					db: db,
 					collectionName: "testCollection",
 					query: { 'name': 'Test Record' }
